@@ -11,9 +11,9 @@
 <%am.setFamily(null);%>
 
 <jsp:useBean id="ucm" scope="session" class="model.userCatModel"/>
-<jsp:setProperty name="ucm" property="userID" value="<%=(String)((model.userModel)session.getAttribute("user")).getUserID()%>"/>
+<%--<jsp:setProperty name="ucm" property="userID" value="<%=((model.userModel)session.getAttribute("user")).getUserID()%>"/>--%>
 <%
-
+ucm.setUserID(((model.userModel)session.getAttribute("user")).getUserID());
 UserCatDao ucd=new UserCatDao();
 ucd.getCategoryNo(ucm,application);
 ucd.getCount(ucm,application, session);

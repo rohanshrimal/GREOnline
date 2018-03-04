@@ -29,15 +29,37 @@ ArrayList Meaning=ucm.getMeaning();
         <title>VOCABULARY</title>
     </head>
     <body>
-        <pre><h1>                                                      WORD COUNT : <%=session.getAttribute("wc")%></h1><form action="NextWord"><fieldset><legend style="font-size : 50pt" align="center"><%=Synonym.get(0)%></legend><h1>MEANING   :</h1><div style="font-size : 15pt"><%=Meaning.get(0)%></div><hr><h1>SYNONYMS  :</h1><div style="font-size : 15pt"><% for(int i=1;i<Synonym.size();i++){%>
-    <%=i+". "+(String)Synonym.get(i)%><%="    \t\t:\t\t"%><%=Meaning.get(i)%><%}%></div>      
+        <pre><h1>   SYNONYM COUNT : <span id="synCount"></span>                                               WORD COUNT : <%=session.getAttribute("wc")%></h1><form action="NextWord"><fieldset><legend style="font-size : 50pt" align="center"><%=Synonym.get(0)%></legend><h1>MEANING   :</h1><div style="font-size : 15pt"><%=Meaning.get(0)%></div><hr><h1>SYNONYMS  :</h1><div style="font-size : 15pt"><% for(int i=1;i<Synonym.size();i++){%>
+    <span class="synonym"><%=i+". "+(String)Synonym.get(i)%><%="    \t\t:\t\t"%><%=Meaning.get(i)%></span><%}%></div>      
      
-     <center><input type="submit" name="submit" value="PREVIOUS CATEGORY"/>  <input type="submit" name="submit" value="NEXT CATEGORY"/></center>
+     <center><input type="submit" name="submit" value="PREVIOUS CATEGORY"/>  <input type="submit" name="submit" value="NEXT CATEGORY" onclick="return AreYouSure()"/></center>
        </fieldset>
         </form>
     <a href="vocab.jsp">VOCAB-SECTION</a> 
 
     <a href="verbal.jsp">VERBAL-SECTION</a>
         </pre>
+    <script>
+    function AreYouSure()
+    {
+        if (confirm("Have You Learnt All The Words of This Category...???")) 
+        {
+            return true;
+        } 
+        else 
+        {
+            return false;
+        }
+    }
+    
+    getSynonymCount();
+    
+    function getSynonymCount()
+    {
+        var synonym=document.getElementsByClassName("synonym");
+        var synonymCount=synonym.length;
+        document.getElementById("synCount").innerHTML=synonymCount;
+    }
+    </script>
     </body>
 </html>

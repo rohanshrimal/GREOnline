@@ -23,7 +23,7 @@ public class ConnectionHandler implements ServletContextListener {
         //To change body of generated methods, choose Tools | Templates.
     try{
         Class.forName("com.mysql.jdbc.Driver");
-        con=DriverManager.getConnection("jdbc:mysql://localhost:3306/greOnline","root","root");  
+        con=DriverManager.getConnection("jdbc:mysql://localhost:3307/greOnline","root","root");  
         
         ServletContext context=sce.getServletContext();
         context.setAttribute("datacon",con);

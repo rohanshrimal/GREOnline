@@ -23,7 +23,7 @@
   MEANING <input type="text" name="tag"/> 
   
            
-        <input type="submit" value="Add Synonym" name="add"/>        <input type="submit"value="Add Category" name="add"/> 
+        <input type="submit" value="Add Synonym" name="add"/>        <input type="submit" value="Add Category" name="add"/> 
             </fieldset> 
 </form>
 <a href="logout">LOG-OUT</a>

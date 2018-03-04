@@ -65,7 +65,7 @@ public class userDao {
         {
             
         }
-        return null;
+        return false;
     }
     
 }

@@ -15,12 +15,12 @@
         <PRE>
         <h1><center>WELCOME  TO  GRE  ONLINE</center></h1><hr>
         CREATE YOUR ACCOUNT HERE :
-        <form action="SaveUser" method="post">
-        First Name  <input type="text" name="fname"/>
-        Last Name   <input type="text" name="lname"/>
-        Email-ID    <input type="text" name="email"/>
-        Password    <input type="password" name="pwd"/>
-        DOB         <input type="text" name="dob"/>
+        <form action="SaveUser" method="post" onsubmit="return checkForm()">
+        First Name  <input type="text" name="fname" id="fname"/>
+        Last Name   <input type="text" name="lname" id="lname"/>
+        Email-ID    <input type="text" name="email" id="email"/>
+        Password    <input type="password" name="pwd" id="pwd"/>
+        DOB         <input type="text" name="dob" id="dob"/>
         
             <input type="submit" value="SIGN-UP"/>
         </form>
@@ -29,5 +29,38 @@
 
         <a href="login.jsp">EXISTING-USER</a><pre><hr>
         </PRE>
+        <script>
+        function checkForm()
+        {
+            if(document.getElementById("fname").value.trim().length===0)
+            {
+                alert("Enter Your First Name...!!!");
+                return false;
+            }
+            if(document.getElementById("lname").value.trim().length===0)
+            {
+                alert("Enter Your Last Name...!!!");
+                return false;
+            }
+            if(document.getElementById("email").value.trim().length===0)
+            {
+                alert("Enter Your Email Id...!!!");
+                return false;
+            }
+            if(document.getElementById("pwd").value.trim().length===0)
+            {
+                alert("Enter Password...!!!");
+                return false;
+            }
+            if(document.getElementById("dob").value.trim().length===0)
+            {
+                alert("Enter Your Date of Birth...!!!");
+                return false;
+            }
+            
+            return true;
+
+        }
+        </script>
     </body>
 </html>
