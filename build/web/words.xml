@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE words SYSTEM "wordcheck.dtd">
+<words>
+    <word>
+        <main-word>ABASH</main-word>
+        <broad-meaning>FEELING EMBARRASED</broad-meaning>
+        <synonyms>
+            <synonym>DISCONCERT</synonym>
+            <synonym>DISCOMFIT</synonym>
+            <synonym>CHAGRIN</synonym>
+            <synonym>VEXATION</synonym>
+        </synonyms>
+    </word>
+    <word>
+        <main-word>ABERRANT</main-word>
+        <broad-meaning>ABNORMAL</broad-meaning>
+        <synonyms>
+            <synonym>ABERRATION</synonym>
+            <synonym>ANOMALOUS</synonym>
+            <synonym>ANOMALY</synonym>
+            <synonym>ATYPICAL</synonym>
+            <synonym>ERRATIC</synonym>
+        </synonyms>
+    </word>
+    <word>
+        <main-word>BABBLE</main-word>
+        <broad-meaning>TALKING NONSENSE</broad-meaning>
+        <synonyms>
+            <synonym>GIBBER</synonym>
+            <synonym>MUMBLE</synonym>
+            <synonym>MURMER</synonym>
+        </synonyms>
+    </word>
+    <word>
+        <main-word>BAMBOOZLED</main-word>
+        <broad-meaning>CONFUSED</broad-meaning>
+        <synonyms>
+            <synonym>DISCOMBOBULATED</synonym>
+            <synonym>NON PLUSSED</synonym>
+            <synonym>OBFUSCATION</synonym>
+        </synonyms>
+    </word>
+    <word>
+        <main-word>AFFABLE</main-word>
+        <broad-meaning>FRIENDLY</broad-meaning>
+        <synonyms>
+            <synonym></synonym>
+        </synonyms>
+    </word>
+</words>

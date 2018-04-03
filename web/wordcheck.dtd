@@ -1,0 +1,6 @@
+<!ELEMENT words (word+)>
+<!ELEMENT word (main-word,broad-meaning,synonyms)>
+<!ELEMENT main-word (#PCDATA)>
+<!ELEMENT broad-meaning (#PCDATA)>
+<!ELEMENT synonyms (synonym+)>
+<!ELEMENT synonym (#PCDATA)>

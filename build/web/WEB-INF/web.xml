@@ -32,6 +32,14 @@
         <servlet-name>check</servlet-name>
         <servlet-class>proprep.check</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GetWords</servlet-name>
+        <servlet-class>controller.GetWords</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetCategory</servlet-name>
+        <servlet-class>controller.GetCategory</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SaveUser</servlet-name>
         <url-pattern>/SaveUser</url-pattern>
@@ -59,6 +67,14 @@
     <servlet-mapping>
         <servlet-name>check</servlet-name>
         <url-pattern>/check</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetWords</servlet-name>
+        <url-pattern>/GetWords</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetCategory</servlet-name>
+        <url-pattern>/GetCategory</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

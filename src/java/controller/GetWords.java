@@ -5,21 +5,23 @@
  */
 package controller;
 
-import dao.userDao;
+import dao.wordDao;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.userModel;
+import javax.servlet.http.HttpSession;
+import model.wordModel;
 
 /**
  *
  * @author rohan
  */
-public class SaveUser extends HttpServlet {
+public class GetWords extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,33 +36,20 @@ public class SaveUser extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            
-            ServletContext context=getServletContext();
-        
-        String fname=request.getParameter("fname");
-        String lname=request.getParameter("lname");
-        String email=request.getParameter("email");
-        String pwd= request.getParameter("pwd");
-        String dob = request.getParameter("dob");
-        
-        userModel um=new userModel();
-        um.setFirstName(fname);
-        um.setLastName(lname);
-        um.setPassword(pwd);
-        um.setUserID(email);
-        um.setDOB(dob);
-        
-        userDao ud=new userDao();
-        Boolean check=false;
-        try{
-       check=ud.insertUser(um,context);
-       response.sendRedirect("login.jsp");
-        }
-        catch(Exception e)
-        {
-            
-        }
+           HttpSession session=request.getSession();
+           ServletContext context=getServletContext();
+           
+           String letter=request.getParameter("letter");
+           wordDao wd=new wordDao();
+           ArrayList<wordModel> alwm=wd.getWordList(letter,context); 
+           
+            System.out.println("i am running....");
+            out.println("<option value='"+"'>"+"          "+"</option>");
+           for(wordModel wm: alwm)
+           {
+               System.out.println("i am running...."+wm.getWord());
+               out.println("<option value='"+wm.getCategoryno()+"'>"+wm.getWord()+"</option>");
+           }
         }
     }
 

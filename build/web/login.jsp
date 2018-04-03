@@ -10,35 +10,84 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>LOG IN</title>
-        <style>
-            
-            h1{
-                color:blue;
-                font-size:25pt;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="grestyleing.css">
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+        
     </head>
     <body>
-        <h1>G R E - O N L I N E</h1><hr>
+        <div class="heading">GRE-ONLINE</div><br>
+    <center>
+    <a href="newuser.jsp" class="links">SIGN-UP</a>
+    <a href="index.html"  class="links">HOME</a>
+    </center>   
+    <br>
+    <center>
+        <div style="border: 1px solid #f44336; padding: 15px; width:500px">
         <form action="verifyuser" method="post" onsubmit="return checkCredentials()">
-            <pre>
-            USER-ID     <input type="text" name="id" id="id"/>
-            PASSWORD    <input type="password" name="pwd" id="pwd"/>
-            USER-TYPE   <select name="utype" id="utype"><option> Student </option><option> Admin </option></select>
-            SAVE PASSWORD <input type="checkbox" value="yes" name="sp"/>
-            
-            <input type="submit" value="LOG-IN"/>
-            </pre>
-
+            <table>
+                <tr>
+                    <td>USER-ID</td>     
+                    <td class="ibox"><input type="text" name="id" id="id"/></td>
+                </tr>
+                <tr>
+                    <td>PASSWORD</td>    
+                    <td class="ibox"><input type="password" name="pwd" id="pwd"/></td>
+                </tr>
+                <tr>
+                    <td>USER-TYPE</td>   
+                    <td class="ibox">
+                        <select name="utype" id="utype">
+                            <option> Student </option>
+                            <option> Admin </option>
+                        </select>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                
+                <tr>
+                    <td>SAVE PASSWORD</td> 
+                    <td>&nbsp;&nbsp;<input type="checkbox" value="yes" name="sp" id="sp"/></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                
+                <tr>
+                    <td colspan="2" class="ibox"><input type="submit" value="LOG-IN"/></td>
+                </tr>
+            </table>
         </form>
-        <hr>
-        <pre>
-        <a href="newuser.jsp">NEW ACCOUNT</a>
-
-        <a href="index.html">HOME</a>
-        </pre>
-        <hr>
-        <script>
+        </div>
+    </center>
+    <br><br>
+         <script>
             function checkCredentials()
             {
                 var uid=document.getElementById("id").value;
@@ -62,10 +111,44 @@
                     alert("Please Select Your User Type First...!!!");
                     return false;
                 }
-                
+                if(document.getElementById("sp").checked)
+                {
+                    setCookie("username",uid,30);
+                    setCookie("password",pwd,30);
+                }
                 return true;
                 
             }
-        </script>
+        
+        function setCookie(cname, cvalue, exdays)
+        {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires="+ d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+        
+        function getCookie(cname) 
+        {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for(var i = 0; i <ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        
+       document.getElementById("id").value=getCookie("username");
+       document.getElementById("pwd").value=getCookie("password");
+      
+            
+         </script>
     </body>
 </html>

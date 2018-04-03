@@ -1,0 +1,110 @@
+input[type=text],[type=password],[type=email], select {
+    width: 300px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #f44336;
+    box-sizing: border-box;
+    font-family: Roboto; 
+    font-size: 15px;
+    
+}
+
+input[type=submit] {
+    width: 150px;
+    background-color: #f44336;
+    color: white;
+    padding: 14px;
+    margin: 14px;
+    border:none;
+    cursor: pointer;
+    font-family: Roboto; 
+    font-size: 25px;
+}
+
+ 
+.count{
+    background-color: white;
+    font-style: initial;
+    font-family: Roboto;
+    font-size: 25px;
+    color: #f44336;
+    width: 300px;
+    border: 1px solid #f44336;
+    padding: 10px;
+    margin: 0px;
+    text-align: center;
+    text-decoration: none;
+}
+
+body{
+   font-family: Roboto; 
+}
+
+#mainword{
+    background-color: #f44336;
+    font-style: initial;
+    font-family: Roboto;
+    color: white;
+   
+}
+
+.wc{
+    float: right;
+}
+
+.sc{
+    float: left;
+}
+
+.calculator{
+    
+   width : 75px;
+   height: 75px;
+   font-size:30px;
+   padding: 15px;
+   background-color: white;
+   color: #f44336;
+   border: 1px solid #f44336;
+}
+
+.calculator:hover{
+    color: white;
+   background-color: #f44336;
+    
+}
+.screen{
+  margin: 0px;
+  padding: 0px;
+  font-size:30px;
+  font-family:Roboto;
+}
+
+.heading{
+    font-size: 60px; 
+    text-align: center;
+    background-color: #f44336;
+    color:white;
+}
+
+.ibox{
+    text-align: center;
+}
+
+.links{
+    
+    text-decoration: none;
+    color: #f44336;
+    border:1px solid #f44336;
+    padding: 10px;
+}
+
+.links:hover{
+    background-color: #f44336;
+    color: white;   
+}
+
+#outputScreen{
+    border: 1px solid #f44336;
+    color:#f44336;
+}

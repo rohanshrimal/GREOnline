@@ -8,6 +8,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <jsp:useBean id="am" scope="session" class="model.AlphaModel"/>
+<jsp:useBean scope="session" id="user" class="model.userModel"/>
 <%am.setFamily(null);%>
 
 <jsp:useBean id="ucm" scope="session" class="model.userCatModel"/>
@@ -24,22 +25,26 @@ session.setAttribute("MaxCounter",ucm.getCategory());
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>VOCABULARY SECTION</title>
+        <link rel="stylesheet" type="text/css" href="grestyleing.css">
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+        
     </head>
     <body>
-        <PRE>
-        <h1>V O C A B U L A R Y   S E C T I O N                       WORD COUNT : <%=session.getAttribute("wc")%></h1><HR>
-    
-    <a href="words.jsp">NEW WORDS</a>
+        <div class="heading">VOCABULARY SECTION</div>
+        <div style="color:#f44336; font-size:30px; display: inline;padding-right: 20px ; margin-right:20px">USERNAME : <jsp:getProperty name="user" property="firstName"/> <jsp:getProperty name="user" property="lastName"/></div><div style="color: #f44336; font-size: 30px;display: inline;float: right;padding-right: 20px">WORD COUNT : <%=session.getAttribute("wc")%></div>
+        <br><br><br>
+         <div style="width:250px">
+             <center>
+    <a href="words.jsp" class="links" style="padding-right:39px ;padding-left:39px">NEW WORDS</a><br><br><br>
 
-    <a href="Revision.jsp">REVISION</a>
+    <a href="Revision.jsp" class="links" style="padding-right:50px ;padding-left:50px">REVISION</a><br><br><br>
     
-   <HR>
-    <a href="StudentHome.jsp">HOME</a>
+    <a href="SearchWords.jsp" class="links" style="padding-right:25px ;padding-left:25px">SEARCH WORDS</a><br><br><br>
+    
+    <a href="StudentHome.jsp" class="links" style="padding-right:62px ;padding-left:62px">HOME</a><br><br><br>
 
-    <a href="logout">LOG-OUT</a>
-        <hr>
-        </PRE>
- 
-  
+    <a href="logout" class="links" style="padding-right:52px ;padding-left:52px">LOG-OUT</a><br><br><br>
+             </center>
+         </div>
     </body>
 </html>

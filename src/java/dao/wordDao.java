@@ -6,6 +6,9 @@
 package dao;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletContext;
 import model.wordModel;
 
@@ -16,6 +19,7 @@ import model.wordModel;
 public class wordDao {
     Connection con;
     PreparedStatement ps;
+    ResultSet rs;
      public void addBaseWord(wordModel wm,ServletContext context)
      {
          try
@@ -71,6 +75,32 @@ public class wordDao {
               System.out.println(e);
          }
      }
+
+    public ArrayList<wordModel> getWordList(String letter,ServletContext context) {
+       
+        try {
+            ArrayList<wordModel> alwm=new ArrayList<>();
+            con=(Connection)context.getAttribute("datacon");
+            String qr="select * from words where word like ?";
+            ps=con.prepareStatement(qr);
+            ps.setString(1,letter+"%");
+            rs=ps.executeQuery();
+            wordModel wm=null;
+            while(rs.next())
+            {
+                wm=new wordModel();
+                wm.setCategoryno(rs.getInt(1));
+                wm.setWord(rs.getString(2));
+                wm.setBroad(rs.getString(3));
+                alwm.add(wm);
+            }
+            return alwm;
+        } catch (SQLException ex) {
+            Logger.getLogger(wordDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+        
+    }
      
      
     
